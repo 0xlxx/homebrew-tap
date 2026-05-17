@@ -12,7 +12,7 @@ class Pdfsearch < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3")
-    venv.pip_install "--only-binary", ":all:", "PyMuPDF"
+    system libexec/"bin/pip", "install", "--only-binary", ":all:", "PyMuPDF"
     libexec.install "pdfsearch"
     (bin/"pdfsearch").write_env_script libexec/"pdfsearch", PATH: "#{libexec}/bin:$PATH"
   end
