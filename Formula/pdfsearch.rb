@@ -10,13 +10,11 @@ class Pdfsearch < Formula
 
   depends_on "python@3.13"
 
-  resource "pymupdf" do
-    url "https://files.pythonhosted.org/packages/22/32/708bedc9dde7b328d45abbc076091769d44f2f24ad151ad92d56a6ec142b/pymupdf-1.27.2.3.tar.gz"
-    sha256 "7a92faa25129e8bbec5e50eeb9214f187665428c31b05c4ef6e36c58c0b1c6d2"
-  end
-
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3")
+    venv.pip_install "PyMuPDF"
+    libexec.install "pdfsearch"
+    (bin/"pdfsearch").write_env_script libexec/"pdfsearch", PATH: "#{libexec}/bin:$PATH"
   end
 
   def caveats
