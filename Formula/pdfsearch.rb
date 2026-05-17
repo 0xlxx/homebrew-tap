@@ -1,8 +1,8 @@
 class Pdfsearch < Formula
   desc "High-performance PDF full-text search with fzf interactive mode"
   homepage "https://github.com/0xlxx/pdfsearch"
-  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.1.1.tar.gz"
-  sha256 "1dd8faa557cc20eadf65085a6e00b6d08f06a8f528a622a876044658794c0da2"
+  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.2.1.tar.gz"
+  sha256 "bd6efebdb05ab5077bc115071647f1c9e818580a4e66725e4133534718aa6b91"
   license "MIT"
   head "https://github.com/0xlxx/pdfsearch.git", branch: "main"
 
@@ -17,8 +17,8 @@ class Pdfsearch < Formula
 
   def caveats
     <<~EOS
-      Interactive mode (-I) requires fzf. Install it with:
-        brew install fzf
+      Interactive mode (-I) requires fzf and Skim:
+        brew install fzf skim
     EOS
   end
 
