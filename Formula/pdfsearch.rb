@@ -8,14 +8,9 @@ class Pdfsearch < Formula
 
   depends_on "python@3.13"
 
-  resource "pymupdf" do
-    url "https://files.pythonhosted.org/packages/01/89/3f8edd6c4f50ca370e2a2f2a3011face36f3760728ffe76dffec91c0fca0/pymupdf-1.27.2.3-cp310-abi3-macosx_11_0_arm64.whl"
-    sha256 "660d93cb6da5bbddf11d3982ae27745dd3a9902d9f24cdb69adab83962294b5a"
-  end
-
   def install
     python3 = Formula["python@3.13"].opt_bin/"python3.13"
-    system python3, "-m", "pip", "install", "--target=#{libexec}", resource("pymupdf").cached_download
+    system python3, "-m", "pip", "install", "--target=#{libexec}", "PyMuPDF>=1.23"
     libexec.install "pdfsearch"
     (bin/"pdfsearch").write_env_script libexec/"pdfsearch", PYTHONPATH: libexec
   end
