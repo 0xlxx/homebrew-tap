@@ -1,8 +1,8 @@
 class Pdfsearch < Formula
   desc "High-performance PDF full-text search with text indexing and fzf interactive mode"
   homepage "https://github.com/0xlxx/pdfsearch"
-  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.3.1.tar.gz"
-  sha256 "138eb2ec06ccd9930c34e1a2b1640134f21f5ee6bcfc00cc5a208615205b5039"
+  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.4.0.tar.gz"
+  sha256 "00d762fbd96f5f668f4eae55a870cc24f62d43a3bdc3224281276e50cf45d0dd"
   license "MIT"
   head "https://github.com/0xlxx/pdfsearch.git", branch: "main"
 
@@ -13,6 +13,7 @@ class Pdfsearch < Formula
     python3 = Formula["python@3.13"].opt_bin/"python3.13"
     system python3, "-m", "pip", "install", "--target=#{libexec}", "PyMuPDF>=1.23"
     libexec.install "pdfsearch"
+    libexec.install "core"
     (bin/"pdfsearch").write_env_script libexec/"pdfsearch", PYTHONPATH: libexec
   end
 
