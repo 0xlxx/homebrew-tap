@@ -2,7 +2,7 @@ class Pdfsearch < Formula
   desc "High-performance full-text search for PDF, EPUB, and TXT files"
   homepage "https://github.com/0xlxx/pdfsearch"
   url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.6.1.tar.gz"
-  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
+  sha256 "1c953a2923aeab49de1c24c1cb320d7e5d1651d77d7ddfcd208ae515d0e24a93"
   license "MIT"
   head "https://github.com/0xlxx/pdfsearch.git", branch: "main"
 
