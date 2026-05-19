@@ -1,8 +1,8 @@
 class Pdfsearch < Formula
-  desc "High-performance PDF full-text search with text indexing and fzf interactive mode"
+  desc "High-performance full-text search for PDF, EPUB, and TXT files"
   homepage "https://github.com/0xlxx/pdfsearch"
-  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.4.0.tar.gz"
-  sha256 "00d762fbd96f5f668f4eae55a870cc24f62d43a3bdc3224281276e50cf45d0dd"
+  url "https://github.com/0xlxx/pdfsearch/archive/refs/tags/v0.6.1.tar.gz"
+  sha256 "d5558cd419c8d46bdc958064cb97f963d1ea793866414c025906ec15033512ed"
   license "MIT"
   head "https://github.com/0xlxx/pdfsearch.git", branch: "main"
 
