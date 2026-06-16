@@ -6,6 +6,8 @@ class Pdfsearch < Formula
   license "MIT"
   head "https://github.com/0xlxx/pdfsearch.git", branch: "main"
 
+  deprecate! date: "2026-06-16", because: "has been superseded by paperfetcher"
+
   depends_on "python@3.13"
   depends_on "ripgrep"
 
@@ -19,6 +21,9 @@ class Pdfsearch < Formula
 
   def caveats
     <<~EOS
+      pdfsearch is deprecated! Please use paperfetcher instead:
+        brew install 0xlxx/tap/paperfetcher
+
       Interactive mode (-I) requires fzf and Skim:
         brew install fzf
         brew install --cask skim
