@@ -1,18 +1,17 @@
 class MediaPause < Formula
-  desc "macOS countdown timer that pauses browser media"
+  desc "macOS countdown timer that pauses and resumes browser media"
   homepage "https://github.com/0xlxx/media-pause"
-  url "https://github.com/0xlxx/media-pause/archive/refs/tags/v0.2.0.tar.gz"
-  sha256 "c0d5b8b36b6191f1e39afac8279275c9d0b5e56c07d5fdf440d1cd12b847f9d4"
+  url "https://github.com/0xlxx/media-pause/archive/refs/tags/v4.0.0.tar.gz"
+  sha256 "9aafa776cce4114e23d5ac6c08f62bcc23d8a4320a5b2cc3cc4383b0b483545e"
   license "MIT"
-  version "0.2.0"
   head "https://github.com/0xlxx/media-pause.git", branch: "main"
 
   depends_on :macos
   uses_from_macos "swift" => :build
 
   def install
-    system "swiftc", "-O", "-o", "media-pause", "main.swift"
-    bin.install "media-pause"
+    system "swift", "build", "-c", "release", "--disable-sandbox"
+    bin.install ".build/release/media-pause"
   end
 
   test do
