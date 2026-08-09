@@ -10,7 +10,7 @@ class MediaPause < Formula
   uses_from_macos "swift" => :build
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
+    system "swift", "build", "-c", "release", "--product", "media-pause", "--disable-sandbox"
     bin.install ".build/release/media-pause"
   end
 
